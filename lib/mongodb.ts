@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
-const MONGODB_URI = 'mongodb+srv://hashhussain53:I0MJ7ae6AOI6sIEu@cluster0.wwk8glz.mongodb.net';
-const BASE_DB_NAME = 'ATS-DB';
+const MONGODB_URI = process.env.MONGODB_URI;
+const BASE_DB_NAME = process.env.MONGODB_DB;
 
 declare global {
   var _mongooseCache: {

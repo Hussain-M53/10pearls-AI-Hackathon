@@ -36,7 +36,7 @@ export async function connectToSharedDatabase(): Promise<mongoose.Connection> {
 }
 
 export async function connectToTenantDatabase(tenantId: string): Promise<mongoose.Connection> {
-  const tenantDbUri = `${MONGODB_URI}/${BASE_DB_NAME}_10pearls`;
+  const tenantDbUri = `${MONGODB_URI}/${BASE_DB_NAME}_${tenantId}`;
   const tenantConnection = await mongoose.createConnection(tenantDbUri).asPromise();
   console.log(tenantConnection);
   console.log("connection created!!!!!!!!!!!!!!!!!");
